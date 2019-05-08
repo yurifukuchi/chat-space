@@ -33,7 +33,7 @@ Things you may want to cover:
 - has_many :groups
 - has_many :messages
 
-##groupテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -44,7 +44,7 @@ Things you may want to cover:
 - has_many:messages
 
 
-##messageテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -57,7 +57,7 @@ Things you may want to cover:
 - belongs_to: group
 
 
-##membersテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
