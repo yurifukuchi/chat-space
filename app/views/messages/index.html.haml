@@ -1,0 +1,42 @@
+!!!
+
+%head
+  %body
+    -#サイドバー
+    .chat-side
+      .side-header
+        %p.side-header__use-name<
+          ユーザー名
+        %ul.user-menu
+          %li.user-menu__new-group<
+            %a{:href => "/"}
+              %i.fa.fa-edit.icon-color
+          %li.user-menu__edit-user<
+            %a{:href => "/"}
+              %i.fa.fa-cog.icon-color
+              
+      =render partial: "group"
+
+    -#メイン
+    .chat-main
+      .main-header
+        .current-group
+          %h2.current-group__name
+            グループ名
+          %ul.member-list
+            Member：
+            %li.member-list__member
+              名前
+        .main-header__edit-btn
+          Edit
+
+      =render partial: "message"
+
+      .form
+        .new-message
+          .input-box
+            %input.input-box__text{:type => "text",:name => "message", :placeholder => "type a message", :size => "60"}   
+            %label
+              %input.image-label{:type => "file", :name => "file"}
+                %i.fa.fa-image
+          %input.new-message__submit-btn{:type => "submit", :name=> "comit", :value=> "Send"}
