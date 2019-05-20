@@ -1,0 +1,11 @@
+// 画面両側の余白(20px)
+@mixin sidePadding(){
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// 画面両側の余白(40px)
+@mixin mainPadding(){
+  padding-left: 40px;
+  padding-right: 40px;
+}
