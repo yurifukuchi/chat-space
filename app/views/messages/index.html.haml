@@ -8,11 +8,11 @@
         %p.side-header__use-name<
           ユーザー名
         %ul.user-menu
-          %li.user-menu__new-group<
-            %a{:href => "/"}
+          %li.user-menu__new-group
+            = link_to '/' do
               %i.fa.fa-edit.icon-color
           %li.user-menu__edit-user<
-            %a{:href => "/"}
+            = link_to '/' do
               %i.fa.fa-cog.icon-color
               
       =render partial: "group"
@@ -35,8 +35,8 @@
       .form
         .new-message
           .input-box
-            %input.input-box__text{:type => "text",:name => "message", :placeholder => "type a message", :size => "60"}   
+            %input.input-box__text{type: "text", name: "message", placeholder: "type a message", size: "60"}   
             %label
-              %input.image-label{:type => "file", :name => "file"}
+              %input.image-label{type: "file", name: "file"}
                 %i.fa.fa-image
-          %input.new-message__submit-btn{:type => "submit", :name=> "comit", :value=> "Send"}
+          %input.new-message__submit-btn{type: "submit", name: "comit", value: "Send"}
