@@ -6,13 +6,13 @@
     .chat-side
       .side-header
         %p.side-header__use-name<
-          ユーザー名
+          = current_user.name
         %ul.user-menu
           %li.user-menu__new-group
             = link_to '/' do
               %i.fa.fa-edit.icon-color
           %li.user-menu__edit-user<
-            = link_to '/' do
+            = link_to edit_user_registration_path(current_user) do
               %i.fa.fa-cog.icon-color
               
       =render partial: "group"
