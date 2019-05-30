@@ -40,7 +40,10 @@
 
     .group{
       margin-bottom: 40px;
-
+      display: block;
+      color: $fontWhiteColor;
+      text-decoration: none; 
+      
         &__group-name{
           font-size: 15px;   
           margin-bottom: 5px;
