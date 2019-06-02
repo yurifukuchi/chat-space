@@ -10,16 +10,16 @@
       .main-header
         .current-group
           %h2.current-group__name
-            グループ名
+            = @group.name
           %ul.member-list
             Member：
             %li.member-list__member
-              名前
+            
         
-        =link_to edit_group_path(@group), class: 'main-header__edit-btn' do
+        =link_to edit_group_path(current_user.groups), class: 'main-header__edit-btn' do
           Edit
 
-      =render partial: "message"
+      =render partial: "messages/message"
 
       .form
         .new-message
