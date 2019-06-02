@@ -3,19 +3,7 @@
 %head
   %body
     -#サイドバー
-    .chat-side
-      .side-header
-        %p.side-header__use-name<
-          = current_user.name
-        %ul.user-menu
-          %li.user-menu__new-group
-            = link_to '/' do
-              %i.fa.fa-edit.icon-color
-          %li.user-menu__edit-user<
-            = link_to edit_user_registration_path(current_user) do
-              %i.fa.fa-cog.icon-color
-              
-      =render partial: "group"
+    =render partial: "groups/side_bar"
 
     -#メイン
     .chat-main
@@ -27,7 +15,8 @@
             Member：
             %li.member-list__member
               名前
-        .main-header__edit-btn
+        
+        =link_to edit_group_path(@group), class: 'main-header__edit-btn' do
           Edit
 
       =render partial: "message"
