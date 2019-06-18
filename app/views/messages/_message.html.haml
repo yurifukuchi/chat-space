@@ -1,36 +1,11 @@
-.messages
-  .message
-    .upper-info
-      %p.upper-info__user
-        田中
-      %p.upper-info__date
-        2019/05/05(Sun) 01:02:56
-    %p.message__text
-      こんにちは
 
-  .message
-    .upper-info
-      %p.upper-info__user
-        田中
-      %p.upper-info__date
-        2019/05/05(Sun) 01:02:56
-    %p.message__text
-      こんにちは
-
-  .message
-    .upper-info
-      %p.upper-info__user
-        田中
-      %p.upper-info__date
-        2019/05/05(Sun) 01:02:56
-    %p.message__text
-      こんにちは
-
-  .message
-    .upper-info
-      %p.upper-info__user
-        田中
-      %p.upper-info__date
-        2019/05/05(Sun) 01:02:56
-    %p.message__text
-      こんにちは
+.message
+  .upper-info
+    %p.upper-info__user
+      = message.user.name
+    %p.upper-info__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %p.message__text
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url, class:'message__text__image' if message.image.present?
