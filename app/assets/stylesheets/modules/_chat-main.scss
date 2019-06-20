@@ -51,9 +51,11 @@
     background-color: #fafafa;
     box-sizing: border-box;
     height: calc(100vh - 190px);
+    overflow: scroll;
     
     .message{
       margin-bottom: 40px;
+
   
       .upper-info{
         margin-bottom: 10px;
