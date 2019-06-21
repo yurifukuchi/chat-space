@@ -78,17 +78,14 @@ $(function() {
     .done(function(messages) {
       messages.forEach(function(message) {
         buildHTML(message);
-        $('.messages').animate({
-          scrollTop: $('.messages').get(0).scrollHeight
-        },100);
-        return false;
+        // $('.messages').animate({
+        //   scrollTop: $('.messages').get(0).scrollHeight
+        // },100);
+        // return false;
       });
-
-      console.log('success');
-
     })
     .fail(function() {
-      console.log('error');
+      alert("エラーです");
     });
   };
   setInterval(reloadMessages, 5000);
