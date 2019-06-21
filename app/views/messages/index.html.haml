@@ -11,17 +11,17 @@
           - @group.users.each do |user|
             = user.name
 
-    =link_to edit_group_path(current_user.groups), class: 'main-header__edit-btn' do
-      Edit
+    =link_to 'Edit', edit_group_path(@group),class: 'main-header__edit-btn'
+
   .messages
     = render @messages
 
   .form
-    .new-message
-      = form_for [@group, @message] do |f|
+    = form_for [@group, @message] do |f|
+      .new-message
         .new-message__box
           = f.text_field :content, class:'new-message__box__text', placeholder: "type a message"
           = f.label :image, class: 'new-message__box__image' do
-            = fa_icon 'image', class: 'icon'
+            = fa_icon 'image', class: 'icon' 
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'new-message__submit'
