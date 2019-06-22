@@ -65,7 +65,11 @@ $(function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var latest = $('.message:last');
     last_message_id = latest.data('id');
-    var url = $(location).attr('pathname').replace("/message","/api/message");
+    var nowpage = $(location).attr('pathname')
+    var url = nowpage.replace("/message","/api/message");
+    if(!nowpage.match(/groups\/\d\/messages/)) {
+      return;
+    }
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: url,
